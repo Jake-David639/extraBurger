@@ -16,16 +16,18 @@ router.get('/burgers', (req, res) => {
 });
 // post route to add new burger to db
 router.post('/burgers/create', (req, res) => {
-    burger.create(req.body.burger_name, result => {
+    db.Burger.create({burger_name: req.body.burger_name})
+    .then(result => {
         console.log(result);
         res.redirect('/');
     });
 });
 // put route to update existing burger data
 router.put('/burgers/:id', (req, res) => {
-    burger.update(req.params.id, result => {
+    db.Burger.update({ devoured: true }, {where: {id: req.params.id}
+    }).then(result => {
         console.log(result);
-        res.sendStatus(200);
+        res.json('/');
     });
 });
 

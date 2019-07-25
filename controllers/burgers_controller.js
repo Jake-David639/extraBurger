@@ -1,6 +1,6 @@
 // import dependencies
 const express = require('express');
-const burger = require('../models/burger.js');
+const db = require('../models/');
 const router = express.Router();
 
 // get route to render the homepage
@@ -8,8 +8,10 @@ router.get('/', (req, res) => {
     res.redirect('/burgers');
 });
 router.get('/burgers', (req, res) => {
-    burger.findAll((burgerData) => {
-        res.render("index", { burger_data: burgerData });
+    db.Burger.findAll().then(burgerData => {
+        console.log(burgerData);
+        const burgerObj = {burger: burgerData};
+        res.render("index", burgerObj);
     });
 });
 // post route to add new burger to db

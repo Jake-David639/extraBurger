@@ -1,0 +1,37 @@
+{
+  "name": "burger",
+  "version": "1.0.0",
+  "description": "exppress-handlebars mySQL node.js",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jake-David639/burger.git"
+  },
+  "author": "Jake David",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jake-David639/burger/issues"
+  },
+  "homepage": "https://github.com/Jake-David639/burger#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^3.1.0",
+    "mysql": "^2.17.1",
+    "sequelize": "^5.10.3",
+    "sequelize-cli": "^5.5.0"
+  },
+  "engines": {
+    "node": "11.x"
+  },
+  "devDependencies": {},
+  "keywords": [
+    "express-handlebars",
+    "node",
+    "orm",
+    "mvc"
+  ]
+}
